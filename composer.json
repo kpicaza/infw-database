@@ -1,0 +1,61 @@
+{
+    "name": "infw/database",
+    "type": "library",
+    "description": "Database connection helper for In framework",
+    "keywords": [
+        "infw",
+        "database"
+    ],
+    "homepage": "https://github.com/infw/database",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kpicaza",
+            "email": "kpicaza@example.com",
+            "homepage": "https://github.com/kpicaza",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "fetzi/phpspec-watcher": "^1.0",
+        "henrikbjorn/phpspec-code-coverage": "^3.0",
+        "memio/spec-gen": "^0.6.1",
+        "phpspec/phpspec": "^3.0",
+        "phpunit/phpunit": "^5.7.21",
+        "phpstan/phpstan": "^0.6.4",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "InFw\\DB\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InFw\\DB\\": "tests"
+        }
+    },
+    "scripts": {
+        "watch-tests": "phpspec-watcher watch --ansi",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests --ansi",
+        "spec-describe": "phpspec describe --ansi",
+        "spec-run": "phpspec run --format=pretty --ansi",
+        "inspect": "phpstan analyse -l 4 -c phpstan.neon src --ansi"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "zf": {
+            "config-provider": "InFw\\DB\\ConfigProvider"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

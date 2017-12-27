@@ -1,0 +1,20 @@
+<?php
+
+return [
+    'database' => [
+        'connection' => [
+            'default' => [
+                'driver' => 'mysql',
+                'host' => '127.0.0.1',
+                'port' => '3306',
+                'user' => 'infw',
+                'password' => '',
+                'dbname' => 'infw',
+                'charset' => 'utf8',
+                'options' => [
+                    1002 => "SET NAMES 'UTF8'"
+                ],
+            ],
+        ],
+    ],
+];
