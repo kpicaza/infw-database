@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": "^7.0",
+        "izniburak/pdox": "^1.2",
         "psr/container": "^1.0"
     },
     "require-dev": {

@@ -2,6 +2,7 @@
 
 namespace InFw\DB;
 
+use InFw\DB\Container\PdoFactory;
 use PDO;
 
 class ConfigProvider
@@ -11,13 +12,15 @@ class ConfigProvider
         return [
             'dependencies' => [
                 'factories' => [
-                    PDO::class => MySQLConnectionFactory::class,
+                    PDO::class => PdoFactory::class,
+
                 ]
             ],
             'database' => [
                 'default_connection' => 'default',
                 'connection' => [
                     'default' => [
+                        'implementation' => 'pdo',
                         'driver' => 'mysql',
                         'host' => '127.0.0.1',
                         'port' => '3306',
