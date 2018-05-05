@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "InFw\\DB\\": "src"
+            "InFw\\DB\\": "src/InFw/DB"
         }
     },
     "autoload-dev": {
